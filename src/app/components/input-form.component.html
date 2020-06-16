@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-md-5">
+        <h4><strong>Reactive form in Angular</strong></h4>
+   <form [formGroup] = "loginForm" (ngSubmit) = "onSubmit()">
+       <div class= "form-group">
+                <label for= "firstName">First Name :  </label>
+                <input value="firstName"  class="form-control" type="text" formControlName = "firstName">
+              
+            </div>
+            <div class= "form-group">
+                <label for= "name">Last Name :</label>
+                    <input value="lastName" class="form-control" type="text" formControlName = "lastName">
+                
+            </div>
+            
+                <div formGroupName="address"><p><strong>Address</strong></p>
+                    <div class= "form-group">
+                    <label for= "houseName">House Name : </label>
+                    <input value="" type="text" class="form-control" formControlName = "houseName">
+               
+                    </div>
+                    <div class= "form-group">
+                <label for= "streetName">Steet Name :</label>
+                    <input value="" type="text" class="form-control" formControlName = "streetName">
+                
+            </div>
+            <div class= "form-group">
+                <label for= "pincode">Pincode :  </label>
+                    <input value="" type="text" class="form-control" formControlName = "pincode">
+              
+                </div>
+                
+            </div>
+            <div class= "form-group">
+            <label for= "email">Email : </label>
+                <input value="" type="text" class="form-control" formControlName = "emailAddress">
+           
+            </div>
+                <div><button class= "btn btn-info" [disabled] = "!loginForm.valid" (click) = "update()">Submit</button> </div>
+            </form>      
+    </div>
+
+    <div>
+        <p><strong>status:{{loginForm.status}}</strong></p>
+       
+    </div>
+</div>
